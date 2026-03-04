@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <link href="images/d66e3c528_logo.png" rel="icon" type="image/svg+xml">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="https://fruit-scan-ai.base44.app/manifest.json" rel="manifest">
+  <title>
+   FrutIA
+  </title>
+  <script crossorigin="" src="js/index-Xkk-503D.js" type="module">
+  </script>
+  <link crossorigin="" href="css/index-BPGmjZNU.css" rel="stylesheet">
+  <script type="module">
+   let lastPath = "";
+function getPageNameFromPath(path) {
+  const segments = path.split("/").filter(Boolean);
+  return segments[0] || null;
+}
+function trackPageView() {
+  const path = window.location.pathname;
+  if (path === lastPath) return;
+  lastPath = path;
+  const pageName = getPageNameFromPath(path) || "home";
+  const appId = "69a78c31ec3c5ecb9d60cfa4";
+  const serverUrl = "https://base44.app" || "";
+  if (!appId) return;
+  fetch(`${serverUrl}/app-logs/${appId}/log-user-in-app/${pageName}`, {
+    method: "POST",
+  }).catch(() => {});
+}
+const originalPushState = history.pushState.bind(history);
+history.pushState = function (...args) {
+  originalPushState(...args);
+  trackPageView();
+};
+const originalReplaceState = history.replaceState.bind(history);
+history.replaceState = function (...args) {
+  originalReplaceState(...args);
+  trackPageView();
+};
+window.addEventListener("popstate", trackPageView);
+trackPageView();
+  </script>
+  <meta content="FrutIA" property="og:title">
+  <meta content="Um aplicativo interativo que utiliza inteligência artificial para identificar e fornecer informações detalhadas sobre frutas, legumes e vegetais a partir de imagens da câmera ou de arquivos enviados." property="og:description">
+  <meta content="images/d66e3c528_logo_1.png" property="og:image">
+  <meta content="https://fruit-scan-ai.base44.app" property="og:url">
+  <meta content="website" property="og:type">
+  <meta content="FrutIA" property="og:site_name">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="FrutIA" name="twitter:title">
+  <meta content="Um aplicativo interativo que utiliza inteligência artificial para identificar e fornecer informações detalhadas sobre frutas, legumes e vegetais a partir de imagens da câmera ou de arquivos enviados." name="twitter:description">
+  <meta content="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/render/image/public/base44-prod/public/69a78c31ec3c5ecb9d60cfa4/d66e3c528_logo.png?width=1200&height=630&resize=contain" name="twitter:image">
+  <meta content="https://fruit-scan-ai.base44.app" name="twitter:url">
+  <meta content="Um aplicativo interativo que utiliza inteligência artificial para identificar e fornecer informações detalhadas sobre frutas, legumes e vegetais a partir de imagens da câmera ou de arquivos enviados." name="description">
+  <meta content="yes" name="mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="FrutIA" name="apple-mobile-web-app-title">
+  <link href="https://fruit-scan-ai.base44.app" rel="canonical">
+  <script async="true" data-app-id="69a78c31ec3c5ecb9d60cfa4" data-platform-url="https://app.base44.com" src="js/badge.js">
+  </script>
+ </head>
+ <body>
+  <div id="root">
+  </div>
+ 
+
+</body></html>
